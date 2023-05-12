@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ComponenteIntermediarioComponent } from './componente-intermediario.component';
 import { ExemploService } from '../services/exemplo.service';
+import { By } from '@angular/platform-browser';
 
 describe('ComponenteIntermediarioComponent', () => {
   let component: ComponenteIntermediarioComponent;
@@ -24,6 +25,22 @@ describe('ComponenteIntermediarioComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('quando possuir permissão, deve exibir campo "customizado"', () => {
+    component.habilitarCampoCustomizado = true;
+
+    const customizado = fixture.debugElement.query(By.css('#campo-customizado'));
+
+    expect(customizado).not.toBeNull();
+  });
+
+  it('quando não possuir permissão, deve ocultar campo "customizado"', () => {
+    component.habilitarCampoCustomizado = false;
+
+    const customizado = fixture.debugElement.query(By.css('#campo-customizado'));
+
+    expect(customizado).not.toBeNull();
   });
 
   describe('quando formulário estiver válido', () => {
