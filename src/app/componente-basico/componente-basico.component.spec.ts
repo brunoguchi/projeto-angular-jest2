@@ -5,10 +5,10 @@ describe('ComponenteBasicoComponent', () => {
   let component: ComponenteBasicoComponent;
   let fixture: ComponentFixture<ComponenteBasicoComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       declarations: [ComponenteBasicoComponent],
-    }).compileComponents();
+    });
 
     fixture = TestBed.createComponent(ComponenteBasicoComponent);
     component = fixture.componentInstance;

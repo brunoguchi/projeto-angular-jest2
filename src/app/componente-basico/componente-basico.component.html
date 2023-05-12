@@ -5,7 +5,11 @@
         <form (ngSubmit)="salvar()" [formGroup]="form" novalidate>
             <div>
                 <label>Id: </label>
-                <input type="number" class="form-control" formControlName="id" />
+                <input type="number" class="form-control" id="id" formControlName="id" required />
+                <div
+                    class="alert alert-danger">
+                    Id é obrigatório
+                </div>
             </div>
             <div>
                 <label>Observação: </label>
@@ -13,7 +17,7 @@
             </div>
             <br>
             <div class="pull-right">
-                <button type="submit" class="btn btn-success" id="btn-salvar">
+                <button type="submit" class="btn btn-primary" id="btn-salvar">
                     Salvar
                 </button>
             </div>

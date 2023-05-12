@@ -10,6 +10,7 @@ import { ComponenteDoisComponent } from './componente-dois/componente-dois.compo
 import { ComponenteBasicoComponent } from './componente-basico/componente-basico.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ComponenteIntermediarioComponent } from './componente-intermediario/componente-intermediario.component';
+import { ExemploService } from './services/exemplo.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { ComponenteIntermediarioComponent } from './componente-intermediario/com
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    ExemploService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

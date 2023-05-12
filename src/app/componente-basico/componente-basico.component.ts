@@ -15,6 +15,8 @@ export class ComponenteBasicoComponent implements OnInit {
     this.criarForm();
   }
 
+  get IdElement() { return this.form.get('id'); }
+
   criarForm() {
     this.form = this.fb.group({
       id: ['', [Validators.required]],
@@ -24,6 +26,7 @@ export class ComponenteBasicoComponent implements OnInit {
 
   salvar() {
     if (!this.form.valid) {
+      this.validarTodosCampos(this.form);
       return;
     }
   }
@@ -34,6 +37,16 @@ export class ComponenteBasicoComponent implements OnInit {
 
       if (control instanceof FormControl) {
         control.setValue('');
+      }
+    });
+  }
+
+  validarTodosCampos(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsDirty();
+        control.markAsTouched({ onlySelf: true });
       }
     });
   }
