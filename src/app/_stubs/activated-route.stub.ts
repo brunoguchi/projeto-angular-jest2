@@ -1,22 +1,11 @@
-/* eslint-disable no-prototype-builtins */
+import { BehaviorSubject } from 'rxjs';
+
 export class ActivatedRouteStub {
-    private paramMap = new Map<string, string>();
+    private dataSubject = new BehaviorSubject<object>({});
 
-    constructor(initialParams: any = { id: '123' }) {
-        this.setarParamMap(initialParams);
-    }
+    readonly data = this.dataSubject.asObservable();
 
-    get snapshot() {
-        return {
-            paramMap: this.paramMap
-        };
-    }
-
-    setarParamMap(params: any) {
-        for (const key in params) {
-            if (params.hasOwnProperty(key)) {
-                this.paramMap.set(key, params[key]);
-            }
-        }
+    setData(data: object) {
+        this.dataSubject.next(data);
     }
 }

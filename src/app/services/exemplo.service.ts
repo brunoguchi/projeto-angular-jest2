@@ -2,6 +2,8 @@
 import { Injectable } from '@angular/core';
 import { ClasseExemplo } from '../models/class-exemplo.model';
 import { Observable, of } from 'rxjs';
+import { InformacoesExemplo } from '../models/informacoes-exemplo.model';
+import { TipoEnum } from '../enums/tipos.enum';
 
 @Injectable()
 export class ExemploService {
@@ -10,7 +12,11 @@ export class ExemploService {
     return of(void 0);
   }
 
-  obter(id: number): Observable<ClasseExemplo> {
-    return of(new ClasseExemplo());
+  obterPorId(id: number): Observable<InformacoesExemplo> {
+    const info = new InformacoesExemplo();
+    info.id = 1;
+    info.tipo = TipoEnum.TipoB;
+
+    return of(info);
   }
 }

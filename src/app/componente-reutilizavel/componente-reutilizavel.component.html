@@ -1,3 +1,11 @@
 <div class="container">
-    <span>componente-reutilizavel works!</span>
+    <p>componente genérico reutilizável</p>
+    <div>
+        <h5 id="titulo" *ngIf="exibirTitulo">Meu titulo</h5>
+        <span *ngIf="exibirTitulo">Acesso via rota1 - Exibição de titulo permitida!</span>
+        <span *ngIf="!exibirTitulo"><strong>Acesso via rota2 - Exibição de titulo não permitida!</strong></span>
+    </div>
+    <div class="mt-3">
+        <button type="button" class="btn btn-dark" id="btn-teste" *ngIf="exibirBotao">Botão de teste</button>
+    </div>
 </div>

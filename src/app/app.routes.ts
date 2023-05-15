@@ -9,6 +9,6 @@ export const appRoutes: Route[] = [
     { path: '', component: AppComponent },
     { path: 'basico', component: ComponenteBasicoComponent },
     { path: 'medio', component: ComponenteIntermediarioComponent },
-    { path: 'rota1', component: ComponenteUmComponent },
-    { path: 'rota2', component: ComponenteDoisComponent },
+    { path: 'rota1', component: ComponenteUmComponent, data: { exibirTitulo: true } },
+    { path: 'rota2', component: ComponenteDoisComponent, data: { exibirTitulo: false } },
 ];
