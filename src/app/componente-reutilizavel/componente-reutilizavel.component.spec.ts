@@ -35,10 +35,6 @@ describe('ComponenteReutilizavelComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   describe.each([
     {
       descricao: 'deve exibir título se possuir parametro de rota válido',

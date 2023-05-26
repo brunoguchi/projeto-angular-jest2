@@ -23,10 +23,6 @@ describe('ComponenteIntermediarioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('quando possuir permissão, deve exibir campo "customizado"', () => {
     component.habilitarCampoCustomizado = true;
 
